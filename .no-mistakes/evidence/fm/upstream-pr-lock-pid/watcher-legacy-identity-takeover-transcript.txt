@@ -1,0 +1,12 @@
+## host: /proc hidden (FM_PROC_ROOT_OVERRIDE), TZ=America/Los_Angeles
+## old watcher pid=2335362 claimed the lock; current (UTC-pinned) record:
+   pid-identity: Wed Oct 28 17:10:14 2026 bash /tmp/fmrg/head/bin/fm-watch.sh
+## simulate pre-pin build: drop pid-start, record local-time identity:
+   pid-identity: Wed Oct 28 10:10:14 2026 bash /tmp/fmrg/head/bin/fm-watch.sh
+   lock files: fm-home pid pid-identity watcher-path 
+## start a fresh (post-update) watcher
+## lock now held by pid=2338427 (new watcher pid=2338427)
+## old watcher exited on its own with rc=0 (it was never signalled)
+--- old watcher output ---
+--- new watcher output ---
+## new watcher still running: yes

@@ -1,0 +1,21 @@
+=== new regressions against HEAD 80527b29 (this change) ===
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - a fresh watcher replaces a live holder whose pre-UTC-pin identity no longer recomputes, and the old holder stands down unsignalled
+ok - lock whose recorded identity no longer recomputes is reclaimed without signalling its pid; a matching or unrecorded identity stays held
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+
+=== new regressions against base 4a67799d fm-wake-lib.sh (unchanged library) ===
+ok - disposable watcher refuses inherited state outside its marked lab
+not ok - a fresh watcher stood down beside a live holder whose legacy identity no longer recomputes: watcher: lock held by live pid 1899760 but heartbeat is stale for 1s (>1s); inspect or stop that watcher before re-arming.
+FAILED: test_watch_replaces_live_holder_with_legacy_local_time_identity
+not ok - lock whose recorded identity no longer recomputes was not reclaimed: rc=1 held=1904138 recovered= pid=1904138
+FAILED: test_lock_reclaims_holder_whose_identity_no_longer_recomputes
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+
+=== new regressions against f43c830a fm-wake-lib.sh (identity check on every lock, before review narrowing) ===
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - a fresh watcher replaces a live holder whose pre-UTC-pin identity no longer recomputes, and the old holder stands down unsignalled
+ok - lock whose recorded identity no longer recomputes is reclaimed without signalling its pid; a matching or unrecorded identity stays held
+not ok - live supervise-daemon lock with a stale identity was reclaimed: rc=0 held= recovered=1919763
+FAILED: test_lock_keeps_live_daemon_holder_with_stale_identity
+

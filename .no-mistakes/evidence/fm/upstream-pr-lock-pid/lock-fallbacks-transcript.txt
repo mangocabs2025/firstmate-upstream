@@ -1,0 +1,11 @@
+## watch lock: live pid 2369090, mismatched pid-identity recorded, no pid-start
+-- identity unreadable (/proc hidden, ps fails):
+   fm_lock_holder_alive -> alive (kept, pid-liveness answer)
+-- identity readable (normal ps):
+   fm_lock_holder_alive -> not alive (proven mismatch, reclaimable)
+-- lock pid file rewritten to another pid between reads (judged pid 2369090, file now says 999999):
+   fm_lock_holder_alive -> alive (kept, record no longer about this pid)
+-- same mismatched identity on a NON-watch lock (.afk-launch.lock):
+   fm_lock_holder_alive -> alive (identity check not applied)
+-- defined once:
+1
