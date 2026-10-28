@@ -1,0 +1,19 @@
+===== AFTER: target commit 50066de =====
+tree: 50066de adapter sha1: 4bbb46928e7c
+lab session: fm-lab-envafter-3122940-12372
+launcher env: CLAUDE_CODE_CHILD_SESSION=1 CLAUDE_CODE_SESSION_ID=parent-session CLAUDE_CODE_SESSION_ATTENDED=1 CLAUDE_CODE_BRIDGE_SESSION_ID=session_parent CLAUDECODE=1 FM_CREW_STATE_META_OVERRIDE=/tmp/other-task.meta FM_CREW_STATE_STATUS_OVERRIDE=/tmp/other-task.status CLAUDE_CONFIG_DIR=/tmp/kept-claude-config FM_HERDR_SENTINEL=kept
+server_ensure rc=0
+--- live herdr server process (pid 3123269) environment, filtered:
+CLAUDE_CONFIG_DIR=/tmp/kept-claude-config
+FM_HERDR_SENTINEL=kept
+CLAUDE_CODE_CHILD_SESSION: <unset>
+CLAUDE_CODE_SESSION_ID: <unset>
+CLAUDE_CODE_SESSION_ATTENDED: <unset>
+CLAUDE_CODE_BRIDGE_SESSION_ID: <unset>
+FM_CREW_STATE_META_OVERRIDE: <unset>
+FM_CREW_STATE_STATUS_OVERRIDE: <unset>
+--- new pane (w1:p1) shell environment, filtered:
+PANE_ENV CLAUDE_CONFIG_DIR=/tmp/kept-claude-config
+PANE_ENV FM_HERDR_SENTINEL=kept
+PANE_ENV_DONE
+teardown: lab session fm-lab-envafter-3122940-12372 removed, default-session tripwire unchanged

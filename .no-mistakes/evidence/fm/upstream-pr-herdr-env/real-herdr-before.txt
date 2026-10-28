@@ -1,0 +1,25 @@
+===== BEFORE: base commit 4a67799 adapter =====
+tree: /tmp/herdr-failbefore.0x9v adapter sha1: 01f928debd51
+lab session: fm-lab-envbefore-3143907-3754
+launcher env: CLAUDE_CODE_CHILD_SESSION=1 CLAUDE_CODE_SESSION_ID=parent-session CLAUDE_CODE_SESSION_ATTENDED=1 CLAUDE_CODE_BRIDGE_SESSION_ID=session_parent CLAUDECODE=1 FM_CREW_STATE_META_OVERRIDE=/tmp/other-task.meta FM_CREW_STATE_STATUS_OVERRIDE=/tmp/other-task.status CLAUDE_CONFIG_DIR=/tmp/kept-claude-config FM_HERDR_SENTINEL=kept
+server_ensure rc=0
+--- live herdr server process (pid 3144146) environment, filtered:
+CLAUDE_CODE_BRIDGE_SESSION_ID=session_parent
+CLAUDE_CODE_CHILD_SESSION=1
+CLAUDE_CODE_SESSION_ATTENDED=1
+CLAUDE_CODE_SESSION_ID=parent-session
+CLAUDE_CONFIG_DIR=/tmp/kept-claude-config
+FM_CREW_STATE_META_OVERRIDE=/tmp/other-task.meta
+FM_CREW_STATE_STATUS_OVERRIDE=/tmp/other-task.status
+FM_HERDR_SENTINEL=kept
+--- new pane (w1:p1) shell environment, filtered:
+PANE_ENV CLAUDE_CODE_BRIDGE_SESSION_ID=session_parent
+PANE_ENV CLAUDE_CODE_CHILD_SESSION=1
+PANE_ENV CLAUDE_CODE_SESSION_ATTENDED=1
+PANE_ENV CLAUDE_CODE_SESSION_ID=parent-session
+PANE_ENV CLAUDE_CONFIG_DIR=/tmp/kept-claude-config
+PANE_ENV FM_CREW_STATE_META_OVERRIDE=/tmp/other-task.meta
+PANE_ENV FM_CREW_STATE_STATUS_OVERRIDE=/tmp/other-task.status
+PANE_ENV FM_HERDR_SENTINEL=kept
+PANE_ENV_DONE
+teardown: lab session fm-lab-envbefore-3143907-3754 removed, default-session tripwire unchanged
