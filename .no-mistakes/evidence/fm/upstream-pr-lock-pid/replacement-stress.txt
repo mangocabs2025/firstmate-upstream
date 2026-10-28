@@ -1,0 +1,11 @@
+Stress: test_watch_replaces_live_holder_with_legacy_local_time_identity on HEAD 7033ecf, 9 runs, 3 concurrent (host load avg ~90)
+batch 1 run 3 exit=0
+batch 1 run 2 exit=0
+batch 1 run 1 exit=0
+batch 2 run 1 exit=0
+batch 2 run 2 exit=0
+batch 2 run 3 exit=0
+batch 3 run 3 exit=0
+batch 3 run 1 exit=0
+batch 3 run 2 exit=0
+no failures

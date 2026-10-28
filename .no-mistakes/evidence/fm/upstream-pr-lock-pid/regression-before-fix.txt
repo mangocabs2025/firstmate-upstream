@@ -1,0 +1,12 @@
+=== BASE 9905462 (before fix): test_watch_replaces_live_holder_with_legacy_local_time_identity
+ok - disposable watcher refuses inherited state outside its marked lab
+not ok - a fresh watcher stood down beside a live holder whose legacy identity no longer recomputes: watcher: lock held by live pid 2649994 but heartbeat is stale for 6s (>1s); inspect or stop that watcher before re-arming.
+exit=1
+=== BASE 9905462 (before fix): test_lock_reclaims_holder_whose_identity_no_longer_recomputes
+ok - disposable watcher refuses inherited state outside its marked lab
+not ok - lock whose recorded identity no longer recomputes was not reclaimed: rc=1 held=2688618 recovered= pid=2688618
+exit=1
+=== BASE 9905462 (before fix): test_lock_keeps_live_daemon_holder_with_stale_identity
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+exit=0

@@ -1,0 +1,31 @@
+=== HEAD 7033ecf (with fix): test_watch_replaces_live_holder_with_legacy_local_time_identity
+ok - a fresh watcher replaces a live holder whose pre-UTC-pin identity no longer recomputes, and the old holder stands down unsignalled
+exit=0
+=== HEAD 7033ecf (with fix): test_lock_reclaims_holder_whose_identity_no_longer_recomputes
+ok - lock whose recorded identity no longer recomputes is reclaimed without signalling its pid; a matching or unrecorded identity stays held
+exit=0
+=== HEAD 7033ecf (with fix): test_lock_keeps_live_daemon_holder_with_stale_identity
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+exit=0
+=== HEAD 7033ecf (with fix): test_lock_reclaims_reused_pid_lock
+ok - lock whose recorded holder pid was reused by a live process is reclaimed
+exit=0
+=== HEAD 7033ecf (with fix): test_lock_respects_live_holder_matching_its_start_time
+ok - live holder matching its recorded start time keeps its lock
+exit=0
+=== HEAD 7033ecf (with fix): test_lock_does_not_steal_live_lock
+ok - live-held lock is not stolen
+exit=0
+=== HEAD 7033ecf (with fix): test_watcher_self_evicts_on_lock_takeover
+ok - watcher self-evicts when the lock pid no longer names it
+exit=0
+=== HEAD 7033ecf (with fix): test_live_stalled_watch_lock_is_replaced_past_hard_bound
+ok - live watcher lock with a beacon past the hard bound is replaced, under it is still refused
+exit=0
+=== HEAD 7033ecf (with fix): test_stale_watch_lock_reclaimed
+ok - killed watcher stale lock is reclaimed
+exit=0
+=== HEAD 7033ecf (with fix): test_watch_restart_attaches_to_healthy_peer
+not ok - restart did not attach to the verified healthy peer: 
+/home/dev/.no-mistakes/worktrees/c39c36415d24/01M62ARH414F66A3FQQNRC07GX/tests/lib.sh: line 355: 3034190 Killed                     node -e 'const fs = require("node:fs"); process.on("SIGTERM", () => {}); fs.writeFileSync(process.argv[1], "ready\n"); setTimeout(() => {}, 300000)' "$peer_ready"
+exit=1

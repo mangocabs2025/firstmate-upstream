@@ -1,0 +1,24 @@
+# kunchenguid/firstmate#7801 manual reproduction: BASE 9905462 then HEAD 7033ecf
+## tree: /tmp/fmlock-run/base  (simulated /proc-less host, TZ=America/Los_Angeles)
+$ old watcher pid=3520106 claimed .watch.lock
+  UTC identity (current code): Wed Oct 28 23:06:42 2026 bash /tmp/fmlock-run/base/bin/fm-watch.sh
+  recorded pre-pin identity  : Wed Oct 28 16:06:42 2026 bash /tmp/fmlock-run/base/bin/fm-watch.sh   (pid-start removed, as a pre-pin build wrote none)
+$ start new watcher (post-update)
+  .watch.lock/pid now = 3520106  (new=3528483 old=3520106)
+  old watcher STILL RUNNING
+  new watcher EXITED, code=1
+--- old watcher output:
+--- new watcher output:
+  | watcher: lock held by live pid 3520106 but heartbeat is stale for 2s (>1s); inspect or stop that watcher before re-arming.
+
+## tree: <worktree>  (simulated /proc-less host, TZ=America/Los_Angeles)
+$ old watcher pid=3567465 claimed .watch.lock
+  UTC identity (current code): Wed Oct 28 23:07:04 2026 bash <worktree>/bin/fm-watch.sh
+  recorded pre-pin identity  : Wed Oct 28 16:07:04 2026 bash <worktree>/bin/fm-watch.sh   (pid-start removed, as a pre-pin build wrote none)
+$ start new watcher (post-update)
+  .watch.lock/pid now = 3573097  (new=3573097 old=3567465)
+  old watcher exit code = 0
+  new watcher running
+--- old watcher output:
+--- new watcher output:
+
