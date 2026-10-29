@@ -1,0 +1,38 @@
+# fm-watch.sh teardown classification: HEAD a6241e58 vs prior 37605961 (fd 6 opened after lock claim)
+prev   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=0 reason=<none>
+prev   scenario=loop-recreate  paused-before-main-loop=main-loop-running exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.ZbP9R9/loop-recreate/state
+HEAD   scenario=loop-recreate  paused-before-main-loop=main-loop-running exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.fACREq/loop-recreate/state
+HEAD   scenario=loop-recreate  paused-before-main-loop=main-loop-running exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.rzOVdo/loop-recreate/state
+prev   scenario=loop-remove    paused-before-main-loop=main-loop-running exit=1 reason=<none>
+HEAD   scenario=loop-remove    paused-before-main-loop=main-loop-running exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.XAzlMw/loop-remove/state
+HEAD   scenario=loop-remove    paused-before-main-loop=main-loop-running exit=1 reason=<none>
+
+# startup window, paused only after the claim completed (lock watcher-path written, fm-watch.sh:3552), then state dir removed+recreated
+prev   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+prev   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+HEAD   scenario=startup        paused-before-main-loop=no exit=still-running reason=<none>
+# (re-run with a time-bounded pause poll; the previous 5 pairs never paused the watcher)
+prev   scenario=startup        stopped=yes beat-existed-at-stop=no exit=0 reason=<none>
+HEAD   scenario=startup        stopped=yes beat-existed-at-stop=no exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.QRyZOC/startup/state
+prev   scenario=startup        stopped=yes beat-existed-at-stop=no exit=0 reason=<none>
+HEAD   scenario=startup        stopped=yes beat-existed-at-stop=no exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.tMKB3Y/startup/state
+prev   scenario=startup        stopped=yes beat-existed-at-stop=no exit=0 reason=<none>
+HEAD   scenario=startup        stopped=yes beat-existed-at-stop=no exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.1QJSKQ/startup/state
+prev   scenario=startup        stopped=yes beat-existed-at-stop=no exit=0 reason=<none>
+HEAD   scenario=startup        stopped=yes beat-existed-at-stop=no exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.tFRqwr/startup/state
+prev   scenario=startup        stopped=yes beat-existed-at-stop=no exit=0 reason=<none>
+HEAD   scenario=startup        stopped=yes beat-existed-at-stop=no exit=1 reason=watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-teardown-repro.LPFLOw/startup/state

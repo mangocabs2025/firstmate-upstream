@@ -1,0 +1,13 @@
+ok - disposable watcher refuses inherited state outside its marked lab
+=== test_lock_reclaims_holder_whose_identity_no_longer_recomputes
+not ok - lock whose recorded identity no longer recomputes was not reclaimed: rc=1 held=2180548 recovered= pid=2180548
+exit=1
+=== test_lock_keeps_live_daemon_holder_with_stale_identity
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+exit=0
+=== test_watch_replaces_live_holder_with_legacy_local_time_identity
+not ok - a fresh watcher stood down beside a live holder whose legacy identity no longer recomputes: watcher: already running pid 2181879
+exit=1
+=== test_watch_replaced_holder_stands_down_after_successor_exits
+not ok - the successor did not exit cleanly after its recovery wake: watcher: lock held by live pid 2185844 but heartbeat is stale for 1s (>1s); inspect or stop that watcher before re-arming.
+exit=1

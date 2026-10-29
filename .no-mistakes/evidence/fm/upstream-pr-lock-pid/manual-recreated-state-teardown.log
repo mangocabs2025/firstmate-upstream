@@ -1,0 +1,18 @@
+watcher pid=2332520 lock pid=2332520 state inode before=12947433
+state recreated at same path, inode after=12947577, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.8yKD/state
+====
+watcher pid=2352370 lock pid=2352370 state inode before=12947606
+state recreated at same path, inode after=12947728, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.Hjyu/state
+====
+watcher pid=2372154 lock pid=2372154 state inode before=12947753
+state recreated at same path, inode after=12947871, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.Tyvv/state
+====

@@ -1,0 +1,19 @@
+## HEAD a6241e58 bin/fm-watch.sh (5 runs)
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+rc=0
+
+## prior commit 37605961 bin/fm-watch.sh (fd 6 opened after the lock claim) - must fail
+ok - disposable watcher refuses inherited state outside its marked lab
+not ok - watcher read a startup teardown as a successor's release (exit 0): /tmp/fm-prev/bin/fm-watch.sh: line 3546: /tmp/fm-watcher-lock-tests.EZxMra/startup-teardown/state/.watch.lock/pid-identity: No such file or directory
+rc=1
+
+## base 44153212 bin/fm-watch.sh (before this PR) - teardown reading already correct
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+ok - watcher exits 1 with its reason when its state directory is torn down and recreated during startup
+rc=0

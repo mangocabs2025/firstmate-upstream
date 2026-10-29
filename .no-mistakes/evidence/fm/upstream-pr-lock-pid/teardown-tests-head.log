@@ -1,0 +1,6 @@
+=== test_watcher_exits_when_its_state_directory_is_removed
+ok - watch-arm: a watcher exits when its state directory is removed
+=== test_watcher_exits_when_its_home_is_removed
+ok - watch-arm: a watcher exits when its home is removed
+=== test_attached_arm_exits_when_its_root_is_removed
+ok - watch-arm: an attached arm exits within its bound when its root is removed

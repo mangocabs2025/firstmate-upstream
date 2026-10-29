@@ -1,0 +1,45 @@
+## HEAD run 1
+watcher pid=2429681 lock pid=2429681 state inode before=12948020
+state recreated at same path, inode after=12948027, lock present? no
+watcher exit code=0
+--- watcher output:
+check: rearm-resurface
+## HEAD run 2
+watcher pid=2439090 lock pid=2439090 state inode before=12948122
+state recreated at same path, inode after=12948133, lock present? no
+watcher exit code=0
+--- watcher output:
+## HEAD run 3
+watcher pid=2447650 lock pid=2447650 state inode before=12948180
+state recreated at same path, inode after=12948195, lock present? no
+watcher exit code=0
+--- watcher output:
+## HEAD run 4
+watcher pid=2455223 lock pid=2455223 state inode before=12948237
+state recreated at same path, inode after=12948268, lock present? no
+watcher exit code=0
+--- watcher output:
+## BASE run 1
+watcher pid=2460981 lock pid=2460981 state inode before=12948315
+state recreated at same path, inode after=12948330, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.Y1Av/state
+## BASE run 2
+watcher pid=2468038 lock pid=2468038 state inode before=12948357
+state recreated at same path, inode after=12948365, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.27DH/state
+## BASE run 3
+watcher pid=2475750 lock pid=2475750 state inode before=12948408
+state recreated at same path, inode after=12948422, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.jzyj/state
+## BASE run 4
+watcher pid=2482127 lock pid=2482127 state inode before=12948459
+state recreated at same path, inode after=12948475, lock present? no
+watcher exit code=1
+--- watcher output:
+watcher: exiting - state directory was torn down (singleton lock removed): /tmp/fm-recreate.UIwb/state

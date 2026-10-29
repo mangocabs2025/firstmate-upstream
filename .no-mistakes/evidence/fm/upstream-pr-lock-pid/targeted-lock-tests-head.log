@@ -1,0 +1,17 @@
+ok - disposable watcher refuses inherited state outside its marked lab
+=== test_lock_reclaims_reused_pid_lock
+ok - lock whose recorded holder pid was reused by a live process is reclaimed
+=== test_lock_respects_live_holder_matching_its_start_time
+ok - live holder matching its recorded start time keeps its lock
+=== test_lock_reclaims_holder_whose_identity_no_longer_recomputes
+ok - lock whose recorded identity no longer recomputes is reclaimed without signalling its pid; a matching or unrecorded identity stays held
+=== test_lock_keeps_live_daemon_holder_with_stale_identity
+ok - live supervise-daemon lock with a stale local-time identity and no start time is not reclaimed
+=== test_watch_replaces_live_holder_with_legacy_local_time_identity
+ok - a fresh watcher replaces a live holder whose pre-UTC-pin identity no longer recomputes, and the old holder stands down unsignalled
+=== test_watch_replaced_holder_stands_down_after_successor_exits
+ok - a replaced holder stands down cleanly even when its successor has already exited and released the lock
+=== test_watcher_self_evicts_on_lock_takeover
+ok - watcher self-evicts when the lock pid no longer names it
+=== test_lock_does_not_steal_live_lock
+ok - live-held lock is not stolen
